@@ -4,11 +4,31 @@ List of useful commands I looked for, found and figured I'll definitely need the
 
 ## Git
 
+### Daily Work
+
+#### View changes about to be committed
+
+```shell
+git diff --cached
+```
+
+* w/o `--cached` the diff of **ANY** changes is shown
+
+#### Show incoming changes w/o creating a merge conflict
+
+```shell
+git log -p HEAD..FETCH_HEAD
+```
+
+### Statistics
+
 #### Top 10 touched files in a git repository (by a specific author)
 
 ```shell
 git log --author="vlmaier" --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10
 ```
+
+### Refactoring
 
 #### Replace author email in commits
 
@@ -31,24 +51,12 @@ fi
 ' --tag-name-filter cat -- --branches --tags
 ```
 
-#### View changes about to be committed
-
-```shell
-git diff --cached
-```
-
-* w/o `--cached` the diff of **ANY** changes is shown
+### Forensics
 
 #### View project history w/ diffs at each step
 
 ```shell
 git log -p
-```
-
-#### Show incoming changes w/o creating a merge conflict
-
-```shell
-git log -p HEAD..FETCH_HEAD
 ```
 
 #### Search for all occurrences of "..." in any files
@@ -69,6 +77,24 @@ git log --since="2 weeks ago" .
 
 ```shell
 git show [commit|tag]:filename
+```
+
+#### Show all commits since a specific commit | tag
+
+```shell
+git log [commit|tag]..
+```
+
+#### Show any changes matching the string "..."
+
+```shell
+git log -p -S '...'
+```
+
+#### Get set of patches between two versions
+
+```shell
+git format-patch main..feature/test
 ```
 
 ## Maven
