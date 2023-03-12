@@ -97,6 +97,20 @@ git log -p -S '...'
 git format-patch main..feature/test
 ```
 
+#### Show number of commits since it diverged from origin
+
+```shell
+git log origin..origin/feature/test | wc -l
+```
+
+#### Show reflog entries for a branch
+
+```shell
+git log --walk-reflogs branch
+```
+
+* reflog history is only available for the **LOCAL** repository
+
 ## Maven
 
 #### Check for new dependency updates
