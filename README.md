@@ -2,6 +2,16 @@
 
 List of useful commands I looked for, found and figured I'll definitely need them again later.
 
+## Shell
+
+### Image processing
+
+#### Resize PNG image and convert it to base64 format for HTML
+
+```shell
+FILE="YOUR_FILE.png" && sips -Z 32 $FILE && echo "data:image/png;base64,$(cat $FILE | base64)" | pbcopy
+```
+
 ## Git
 
 ### Daily Work
