@@ -4,6 +4,14 @@ List of useful commands I looked for, found and figured I'll definitely need the
 
 ## Shell
 
+### Daily Work
+
+#### View the list of environment variables
+
+```shell
+printenv | less
+```
+
 ### Image processing
 
 #### Resize PNG image and convert it to base64 format for HTML
